@@ -7,12 +7,12 @@ file secara lokal berbasis folder serta metadata dalam format JSON.
 
 ## 👥 Anggota Kelompok dan Kontribusi
 
-1.  **Muh. Dimas Januardi Nur ** (NIM: `230209501007`) --- Perancangan kontrak API dan
-    implementasi endpoint `POST` (upload).
+1.  **Muh. Dimas Januardi Nur ** (NIM: `230209501007`) --- Pengujian sistem
+    berdasarkan skenario dan penyusunan dokumentasi.
 2.  **Andini Sri Rahayu** (NIM: `230209501026`) --- Implementasi endpoint `GET`
     (metadata) dan perancangan struktur folder.
-3.  **Muh. Ridzwan** (NIM: `240209501095`) --- Pengujian sistem
-    berdasarkan skenario dan penyusunan dokumentasi.
+3.  **Muh. Ridzwan** (NIM: `240209501095`) --- Perancangan kontrak API dan
+    implementasi endpoint `POST` (upload).
 4.  **Faqih Ahmad** (NIM: `240209501111`) --- Validasi input dan
     penanganan error serta pengujian integrasi API.
 
