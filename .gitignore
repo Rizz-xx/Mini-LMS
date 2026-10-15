@@ -1,0 +1,12 @@
+# Mengabaikan dependensi Node.js
+node_modules/
+
+# Mengabaikan file sistem operasi
+.DS_Store
+Thumbs.db
+
+# Mengabaikan file fisik yang diupload dan metadata lokal (opsional, biarkan folder ada tapi isinya tidak ikut ter-commit)
+uploads/*
+!uploads/.gitkeep
+metadata/*
+!metadata/.gitkeep
