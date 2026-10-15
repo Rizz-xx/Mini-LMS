@@ -1,19 +1,19 @@
 # Mini-LMS: Submission/File Service Prototype
 
-Prototipe layanan penyimpanan tugas (*Submission/File Service*) yang
+Prototipe layanan penyimpanan tugas (_Submission/File Service_) yang
 dikembangkan sebagai bagian dari sistem **Mini-LMS**. Layanan ini
 dibangun menggunakan **Node.js** dan **Express**, dengan penyimpanan
 file secara lokal berbasis folder serta metadata dalam format JSON.
 
 ## 👥 Anggota Kelompok dan Kontribusi
 
-1.  **Nama Anggota 1** (NIM: `xxxxxxxx`) --- Perancangan kontrak API dan
+1.  **Muh. Dimas Januardi Nur ** (NIM: `230209501007`) --- Perancangan kontrak API dan
     implementasi endpoint `POST` (upload).
-2.  **Nama Anggota 2** (NIM: `xxxxxxxx`) --- Implementasi endpoint `GET`
+2.  **Andini Sri Rahayu** (NIM: `230209501026`) --- Implementasi endpoint `GET`
     (metadata) dan perancangan struktur folder.
-3.  **Nama Anggota 3** (NIM: `xxxxxxxx`) --- Pengujian sistem
+3.  **Muh. Ridzwan** (NIM: `240209501095`) --- Pengujian sistem
     berdasarkan skenario dan penyusunan dokumentasi.
-4.  **Nama Anggota 4** (NIM: `xxxxxxxx`) --- Validasi input dan
+4.  **Faqih Ahmad** (NIM: `240209501111`) --- Validasi input dan
     penanganan error serta pengujian integrasi API.
 
 > Ganti nama anggota dan NIM di atas sesuai dengan data kelompok.
@@ -24,9 +24,9 @@ file secara lokal berbasis folder serta metadata dalam format JSON.
 
 Pastikan perangkat sudah memiliki perangkat lunak berikut:
 
--   [Node.js](https://nodejs.org/) --- disarankan menggunakan versi LTS.
--   [Postman](https://www.postman.com/) atau Thunder Client untuk
-    menguji API.
+- [Node.js](https://nodejs.org/) --- disarankan menggunakan versi LTS.
+- [Postman](https://www.postman.com/) atau Thunder Client untuk
+  menguji API.
 
 ## 🚀 Instalasi dan Menjalankan Program
 
@@ -35,7 +35,7 @@ Pastikan perangkat sudah memiliki perangkat lunak berikut:
 Ekstrak file ZIP proyek atau clone repositori GitHub. Setelah itu, buka
 terminal dan masuk ke direktori proyek:
 
-``` bash
+```bash
 cd mini-lms-submission
 ```
 
@@ -43,7 +43,7 @@ cd mini-lms-submission
 
 Jalankan perintah berikut untuk memasang pustaka yang dibutuhkan:
 
-``` bash
+```bash
 npm install express multer uuid
 ```
 
@@ -51,59 +51,63 @@ npm install express multer uuid
 
 Jalankan server menggunakan Node.js:
 
-``` bash
+```bash
 node server.js
 ```
 
 Jika server berhasil dijalankan, terminal akan menampilkan pesan seperti
 berikut:
 
-``` text
+```text
 Server berjalan di http://localhost:3000
 ```
 
 Pastikan file `server.js` tersedia di direktori proyek sebelum
 menjalankan perintah tersebut.
 
-## 📄 Kontrak API (*API Endpoints*)
+## 📄 Kontrak API (_API Endpoints_)
 
 ### 1. Unggah Tugas --- `POST /api/submissions`
 
 **Deskripsi:** Mengunggah file tugas mahasiswa/siswa dan menyimpan
 metadata file tersebut.
 
--   **Method:** `POST`
--   **URL:** `http://localhost:3000/api/submissions`
--   **Content-Type:** `multipart/form-data`
+- **Method:** `POST`
+- **URL:** `http://localhost:3000/api/submissions`
+- **Content-Type:** `multipart/form-data`
 
 **Parameter request (Body → form-data):**
 
-  -----------------------------------------------------------------------
-  Parameter         Tipe              Wajib             Keterangan
-  ----------------- ----------------- ----------------- -----------------
-  `assignmentId`    Text              Ya                ID tugas yang
-                                                        terdaftar,
-                                                        misalnya
-                                                        `asg-001`,
-                                                        `asg-002`, atau
-                                                        `asg-003`.
+---
 
-  `studentId`       Text              Ya                ID
-                                                        mahasiswa/siswa
-                                                        pengunggah,
-                                                        misalnya
-                                                        `MHS-12345`.
+Parameter Tipe Wajib Keterangan
 
-  `file`            File              Ya                Berkas tugas yang
-                                                        akan diunggah,
-                                                        misalnya PDF,
-                                                        DOCX, atau
-                                                        gambar.
-  -----------------------------------------------------------------------
+---
+
+`assignmentId` Text Ya ID tugas yang
+terdaftar,
+misalnya
+`asg-001`,
+`asg-002`, atau
+`asg-003`.
+
+`studentId` Text Ya ID
+mahasiswa/siswa
+pengunggah,
+misalnya
+`MHS-12345`.
+
+`file` File Ya Berkas tugas yang
+akan diunggah,
+misalnya PDF,
+DOCX, atau
+gambar.
+
+---
 
 **Contoh respons sukses --- `201 Created`:**
 
-``` json
+```json
 {
   "success": true,
   "message": "Submission berhasil diunggah!",
@@ -129,14 +133,14 @@ bergantung pada file yang dikirim dan implementasi server.
 **Deskripsi:** Mengambil informasi atau metadata file yang telah
 diunggah berdasarkan `fileId`.
 
--   **Method:** `GET`
--   **URL:** `http://localhost:3000/api/submissions/:fileId`
--   **Parameter URL:** `fileId` --- UUID unik yang diperoleh dari
-    respons upload.
+- **Method:** `GET`
+- **URL:** `http://localhost:3000/api/submissions/:fileId`
+- **Parameter URL:** `fileId` --- UUID unik yang diperoleh dari
+  respons upload.
 
 Ganti `:fileId` dengan ID file yang sebenarnya. Contoh:
 
-``` http
+```http
 GET http://localhost:3000/api/submissions/uuid-unik-file
 ```
 
@@ -156,10 +160,9 @@ dahulu, lalu ikuti skenario berikut.
 2.  Buka tab **Body**, lalu pilih **form-data**.
 
 3.  Tambahkan parameter berikut:
-
-    -   `assignmentId` --- `asg-001` (Text).
-    -   `studentId` --- `MHS-12345` (Text).
-    -   `file` --- pilih file dari komputer (File).
+    - `assignmentId` --- `asg-001` (Text).
+    - `studentId` --- `MHS-12345` (Text).
+    - `file` --- pilih file dari komputer (File).
 
 4.  Klik **Send**.
 
@@ -214,7 +217,7 @@ ketika beberapa file memiliki nama asli yang sama.
 
 File dan metadata disimpan secara lokal dalam direktori terpisah:
 
-``` text
+```text
 mini-lms-submission/
 ├── server.js
 ├── package.json
@@ -230,10 +233,10 @@ folder `metadata/` menyimpan informasi terkait berkas dalam file JSON.
 
 Submission/File Service ini menyediakan dua fungsi utama:
 
--   **Upload submission:** menerima file tugas dan menyimpan file
-    beserta metadata-nya.
--   **Get submission metadata:** mengambil metadata file berdasarkan
-    `fileId`.
+- **Upload submission:** menerima file tugas dan menyimpan file
+  beserta metadata-nya.
+- **Get submission metadata:** mengambil metadata file berdasarkan
+  `fileId`.
 
 Prototipe ini menggunakan penyimpanan lokal sehingga sesuai untuk
 demonstrasi dan pengujian awal. Untuk penggunaan produksi, pertimbangkan
